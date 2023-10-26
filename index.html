@@ -9,26 +9,47 @@
 <body>
     
     <div class="container-game">
+        <div hidden class="num-players">
+            <!-- form with radio buttons to select 1 or 2 players -->
+            <form action="">
+                <input type="radio" name="num-players" id="one-player" value="one-player" checked>
+                <label for="one-player">1 Player</label>
+                <input type="radio" name="num-players" id="two-players" value="two-players">
+                <label for="two-players">2 Players</label>
+        </div>
         <div class="item player">
-            <button type="button" class="btn-player btn-selected">X</button>
+            <button type="button" class="btn-player btn-player-selected">X</button>
             <button type="button" class="btn-player">O</button>
         </div>
+        <div class="player-turn">Currently Player's <span class="current-player"></span> Turn</div>
         <div class="item board">
-            <button class="field border-right border-bottom"><p></p></button>
-            <button class="field border-right border-bottom"><p></p></button>
-            <button class="field border-bottom"><p></p></button>
-            <button class="field border-right border-bottom"><p></p></button>
-            <button class="field border-right border-bottom"><p></p></button>
-            <button class="field border-bottom"><p></p></button>
-            <button class="field border-right"><p></p></button>
-            <button class="field border-right"><p></p></button>
-            <button class="field"><p></p></button>
+            <button data-row="0" data-col="0" class="field border-right border-bottom"><p></p></button>
+            <button data-row="0" data-col="1" class="field border-right border-bottom"><p></p></button>
+            <button data-row="0" data-col="2" class="field border-bottom"><p></p></button>
+            <button data-row="1" data-col="0" class="field border-right border-bottom"><p></p></button>
+            <button data-row="1" data-col="1" class="field border-right border-bottom"><p></p></button>
+            <button data-row="1" data-col="2" class="field border-bottom"><p></p></button>
+            <button data-row="2" data-col="0" class="field border-right"><p></p></button>
+            <button data-row="2" data-col="1" class="field border-right"><p></p></button>
+            <button data-row="2" data-col="2" class="field"><p></p></button>
 
         </div>
         <div class="item reset">
-            <button type="button" class="reset">Restart</button>
+            <button type="button" class="btn-reset">Restart</button>
         </div>
     </div>
+    <div class="overlay"></div>
+    <div class="winner-banner banner">
+        <h1>The Winner is:</h1>
+        <h2 class="winner-player"></h2>
+        <button type="button" class="btn-reset">Restart</button>
+    </div>
+    <div class="draw-banner banner">
+        <h1>Its a Draw!:</h1>
+        <button type="button" class="btn-reset">Restart</button>
+    </div>
+
+
     <script src="index.js"></script>
 </body>
 </html>

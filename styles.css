@@ -20,9 +20,13 @@ button {
     justify-content: space-around;
     height: 50vh;
     width: 75vw;
+    min-width: 365px;
+    min-height: 435px;
     border: rgb(186, 186, 186) solid 1px;
     border-radius: 1rem;
     margin: 1rem auto 0 auto;
+
+
 }
 
 
@@ -48,12 +52,17 @@ button {
 
 }
 
-.btn-selected {
-    background-color:  rgb(173, 173, 173);
+.btn-player-selected {
+    background-color:  rgb(0, 88, 195);
     box-shadow: 0.5rem 0.5rem 0.5rem rgb(173, 173, 173);
     border: black solid 3px;
     transition: all 0.3s ease-in-out;
 
+}
+
+.btn-current-player {
+    scale: 1.2;
+    transition: all 0.3s ease-in-out;
 }
 
 .board{
@@ -68,8 +77,73 @@ button {
    
 }
 
-.field{
-    /* width: 5rem;
-    height: 5rem; */
-    border: black solid 1px;
+
+
+.border-right{
+    border-right: black solid 2px;
 }
+
+.border-bottom{
+    border-bottom: black solid 2px;
+}
+
+
+.btn-reset {
+    border: rgb(186, 186, 186) solid 1px;
+    border-radius: 0.5rem;
+    width: 10rem;
+    height: 2rem;
+    margin: 0.5rem;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+}
+
+.overlay {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 100vh;
+    width: 100vw;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.overlay.active{
+    display: block;
+}
+
+.banner {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    z-index: 1;
+    border-radius: 2rem;
+    width: 33vw;
+
+    background-color:rgb(173, 173, 173);
+    border:rgba(0, 0, 0) solid 1px;
+
+    transform: translate(-50%, -50%) scale(0);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.winner-banner.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+.draw-banner.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
